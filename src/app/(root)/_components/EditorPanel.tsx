@@ -1,6 +1,5 @@
-import React from 'react'
 
-const EditorPanel = () => {
+function EditorPanel() {
   return (
     <div>EditorPanel</div>
   )
