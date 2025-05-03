@@ -66,7 +66,7 @@ async function Header() {
             <LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />
           </div>
 
-          {!convexUser?.isPro && (
+          {/* {!convexUser?.isPro && (
             <Link
               href="/pricing"
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-700 
@@ -75,11 +75,11 @@ async function Header() {
               <Sparkles className="w-4 h-4 text-amber-400" />
               <span className="text-sm font-medium text-gray-300">Pro</span>
             </Link>
-          )}
+          )} */}
 
-          <SignedIn>
-            <RunButton />
-          </SignedIn>
+          
+          <RunButton />
+
 
           <div className="pl-3 border-l border-gray-800">
             <HeaderProfileBtn />

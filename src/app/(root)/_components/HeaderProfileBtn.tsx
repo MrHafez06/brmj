@@ -1,23 +1,18 @@
 "use client";
 
 import { SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
-import { User } from "lucide-react";
 
 function HeaderProfileBtn() {
   return (
     <>
-      <UserButton>
-        <UserButton.MenuItems>
-          <UserButton.Link
-            label="Profile"
-            labelIcon={<User className="size-4" />}
-            href="/profile"
-          />
-        </UserButton.MenuItems>
-      </UserButton>
+      <UserButton afterSignOutUrl="/" />
 
       <SignedOut>
-        <SignInButton />
+        <SignInButton mode="modal">
+          <button className="px-3 py-1.5 rounded-lg bg-[#1a1a24] hover:bg-[#252532] border border-gray-800/30 transition-colors text-gray-300">
+            Sign in
+          </button>
+        </SignInButton>
       </SignedOut>
     </>
   );

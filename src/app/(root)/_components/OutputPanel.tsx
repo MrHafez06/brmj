@@ -28,29 +28,32 @@ function OutputPanel() {
   return (
     <div className="relative bg-[#121218] rounded-lg border border-gray-800/30 p-4">
       {/* Header */}
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#1a1a24] border border-gray-800/30">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-[#1a1a24] border border-gray-800/30">
             <Terminal className="w-4 h-4 text-gray-400" />
           </div>
-          <span className="text-sm font-medium text-gray-300">Output</span>
+          <div>
+            <h2 className="text-sm font-medium text-gray-300">Output</h2>
+            <p className="text-xs text-gray-500">Execution results</p>
+          </div>
         </div>
 
         {hasContent && (
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1a1a24] 
+            className="flex items-center gap-1.5 px-3 py-2 text-sm text-gray-400 hover:text-gray-300 bg-[#1a1a24] 
             rounded-lg border border-gray-800/30 hover:bg-[#252532] transition-colors"
           >
             {isCopied ? (
               <>
-                <CheckCircle className="w-3.5 h-3.5" />
-                Copied!
+                <CheckCircle className="w-4 h-4" />
+                <span>Copied!</span>
               </>
             ) : (
               <>
-                <Copy className="w-3.5 h-3.5" />
-                Copy
+                <Copy className="w-4 h-4" />
+                <span>Copy</span>
               </>
             )}
           </button>
@@ -58,11 +61,8 @@ function OutputPanel() {
       </div>
 
       {/* Output Area */}
-      <div className="relative">
-        <div
-          className="bg-[#1a1a24] border border-gray-800/30 
-        rounded-lg p-4 h-[600px] overflow-auto font-mono text-sm"
-        >
+      <div className="rounded-lg overflow-hidden border border-gray-800/30">
+        <div className="bg-[#1a1a24] p-4 h-[600px] overflow-auto font-mono text-sm">
           {isRunning ? (
             <RunningCodeSkeleton />
           ) : error ? (
