@@ -1,10 +1,10 @@
 import EditorPanel from "./_components/EditorPanel";
-import Header from "./_components/Header"
+import Header from "./_components/Header";
 import OutputPanel from "./_components/OutputPanel";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0a10]">
       <div className="max-w-[1800px] mx-auto p-4">
         <Header />
 

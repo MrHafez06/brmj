@@ -48,11 +48,11 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
         duration-200 border border-gray-800/50 hover:border-gray-700
         ${!hasAccess && language !== "javascript" ? "opacity-50 cursor-not-allowed" : ""}`}
       >
-        <div
+        {/* <div
           className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/5 
         rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
           aria-hidden="true"
-        />
+        /> */}
 
         <div className="size-6 rounded-md bg-gray-800/50 p-0.5 group-hover:scale-110 transition-transform">
           <Image
@@ -97,9 +97,9 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                 return (
                   <motion.div
                     key={lang.id}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
+                    initial={{ opacity: 1 }}
+                    // animate={{ opacity: 1 }}
+                    // transition={{ delay: index * 0.1 }}
                     className="relative group px-2"
                   >
                     <button
