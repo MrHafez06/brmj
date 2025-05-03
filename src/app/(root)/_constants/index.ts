@@ -194,8 +194,6 @@ int main() {
     return 0;
 }`,
   },
-  
-  
 };
 
 export const THEMES: Theme[] = [

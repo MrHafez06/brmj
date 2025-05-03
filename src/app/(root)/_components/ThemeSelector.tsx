@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { THEMES } from "../_constants";
 import {AnimatePresence, motion} from "framer-motion";
 import {Palette, CircleOff, Moon, Sun, Github, Laptop, Cloud} from "lucide-react"
+import useMounted from "@/hooks/useMounted";
 
 const THEME_ICONS: Record<string, React.ReactNode> = {
   "vs-dark": <Moon className="size-4" />,
@@ -18,7 +19,7 @@ const THEME_ICONS: Record<string, React.ReactNode> = {
 const ThemeSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {theme, setTheme} = useCodeEditorStore();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const currentTheme = THEMES.find((t) => t.id === theme);
 
@@ -33,9 +34,7 @@ const ThemeSelector = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(()=>{
-    setMounted(true);
-  }, []);
+
 
   if(!mounted) return null;
 
