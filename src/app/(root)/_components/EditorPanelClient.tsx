@@ -2,12 +2,12 @@
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useEffect } from "react";
 import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
-import { Editor, type Monaco } from "@monaco-editor/react";
+import { Editor } from "@monaco-editor/react";
 import Image from "next/image";
 import { RotateCcwIcon, TypeIcon } from "lucide-react";
 import { useClerk } from "@clerk/nextjs";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
-import type { editor as MonacoEditor } from "monaco-editor";
+import type * as Monaco from "monaco-editor";
 
 export default function EditorPanelClient() {
   const clerk = useClerk();
@@ -102,7 +102,7 @@ export default function EditorPanelClient() {
               onChange={handleEditorChange}
               theme={theme}
               beforeMount={defineMonacoThemes}
-              onMount={(editor: MonacoEditor.IStandaloneCodeEditor) =>
+              onMount={(editor: Monaco.editor.IStandaloneCodeEditor) =>
                 setEditor(editor)
               }
               options={{
