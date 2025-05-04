@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import { defineMonacoThemes, LANGUAGE_CONFIG } from "../_constants";
 import { Editor } from "@monaco-editor/react";
 import Image from "next/image";
-import { RotateCcwIcon, ShareIcon, TypeIcon } from "lucide-react";
+import { RotateCcwIcon, TypeIcon } from "lucide-react";
 import { useClerk } from "@clerk/nextjs";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
 
 export default function EditorPanelClient() {
   const clerk = useClerk();
-  const [isShareDialogOpen, setIsShareDialogOpen] = useState(false);
   const { language, theme, fontSize, editor, setFontSize, setEditor } =
     useCodeEditorStore();
 
@@ -90,16 +89,6 @@ export default function EditorPanelClient() {
             >
               <RotateCcwIcon className="size-4 text-gray-400" />
             </button>
-
-            {/* Share Button - Commented out
-            <button
-              onClick={() => setIsShareDialogOpen(true)}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors"
-            >
-              <ShareIcon className="size-4 text-gray-300" />
-              <span className="text-sm font-medium text-gray-300">Share</span>
-            </button>
-            */}
           </div>
         </div>
 
@@ -140,11 +129,6 @@ export default function EditorPanelClient() {
           )}
         </div>
       </div>
-      {/* 
-      {isShareDialogOpen && (
-        <ShareSnippetDialog onClose={() => setIsShareDialogOpen(false)} />
-      )}
-      */}
     </div>
   );
 }

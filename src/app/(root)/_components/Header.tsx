@@ -2,10 +2,9 @@ import { currentUser } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "../../../../convex/_generated/api";
 import Link from "next/link";
-import { Pi, Code2, Sparkles } from "lucide-react";
+import { Pi } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSelector from "./LanguageSelector";
-import { SignedIn } from "@clerk/nextjs";
 import RunButton from "./RunButton";
 import HeaderProfileBtn from "./HeaderProfileBtn";
 
@@ -77,9 +76,7 @@ async function Header() {
             </Link>
           )} */}
 
-          
           <RunButton />
-
 
           <div className="pl-3 border-l border-gray-800">
             <HeaderProfileBtn />

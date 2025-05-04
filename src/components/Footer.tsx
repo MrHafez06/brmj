@@ -5,6 +5,7 @@ function Footer() {
     <footer className="py-4 mt-4 border-t border-gray-800/30">
       <div className="flex items-center justify-center">
         <div className="flex items-center gap-2 text-gray-500 text-sm">
+          <Blocks className="size-4" />
           <span>
             This is a mini project I made to test out clerk, convex, piston, and
             local storage stuff. It&apos;ll probably break eventually but you
