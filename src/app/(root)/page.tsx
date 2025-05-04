@@ -14,7 +14,8 @@ export default function Home() {
           <OutputPanel />
         </div>
 
-        <Footer />
+        <Footer /> 
+        {/* stuff here */}
       </div>
     </div>
   );
