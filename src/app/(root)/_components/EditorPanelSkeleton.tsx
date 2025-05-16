@@ -51,12 +51,15 @@ export function EditorAreaSkeleton() {
   );
 
   return (
-    <div className="w-full h-[calc(100vh-280px)] min-h-[600px] bg-[#1a1a24] p-4 relative">
-      <div className="absolute inset-0 p-4">
+    <div className="w-full relative">
+      <div className="h-[calc(100vh-280px)] min-h-[600px] bg-[#1a1a24] p-4 w-full">
         {widths.map((width, i) => (
-          <div key={i} className="flex items-center gap-4 mb-3">
-            <div className="w-12 h-4 bg-gray-800/50 rounded" />
-            <div className="h-4 bg-gray-800/50 rounded" style={{ width }} />
+          <div key={i} className="flex items-center gap-4 mb-3 w-full">
+            <div className="w-12 h-4 bg-gray-800/50 rounded flex-shrink-0" />
+            <div
+              className="h-4 bg-gray-800/50 rounded flex-1"
+              style={{ maxWidth: width }}
+            />
           </div>
         ))}
       </div>
