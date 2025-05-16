@@ -2,12 +2,6 @@ import { Terminal } from "lucide-react";
 import { useMemo } from "react";
 
 export function EditorPanelSkeleton() {
-  // Precompute widths once so client & server match
-  const widths = useMemo(
-    () => Array.from({ length: 15 }, () => `${20 + Math.random() * 60}%`),
-    []
-  );
-
   return (
     <div className="relative">
       <div className="relative bg-[#121218] rounded-lg border border-gray-800/30 p-4">
