@@ -6,7 +6,7 @@ import { Editor } from "@monaco-editor/react";
 import Image from "next/image";
 import { RotateCcwIcon, TypeIcon } from "lucide-react";
 import { useClerk } from "@clerk/nextjs";
-import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
+import { EditorAreaSkeleton } from "./EditorPanelSkeleton";
 import type * as Monaco from "monaco-editor";
 
 export default function EditorPanelClient() {
@@ -102,6 +102,7 @@ export default function EditorPanelClient() {
               onChange={handleEditorChange}
               theme={theme}
               beforeMount={defineMonacoThemes}
+              loading={<EditorAreaSkeleton />}
               onMount={(editor: Monaco.editor.IStandaloneCodeEditor) =>
                 setEditor(editor)
               }
@@ -128,7 +129,7 @@ export default function EditorPanelClient() {
               }}
             />
           ) : (
-            <EditorPanelSkeleton />
+            <EditorAreaSkeleton />
           )}
         </div>
       </div>

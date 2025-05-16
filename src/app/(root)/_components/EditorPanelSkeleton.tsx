@@ -36,16 +36,29 @@ export function EditorPanelSkeleton() {
 
         {/* Editor Area Skeleton */}
         <div className="rounded-lg overflow-hidden border border-gray-800/30">
-          <div className="h-[calc(100vh-280px)] min-h-[600px] bg-[#1a1a24] p-4">
-            {/* Code line skeletons */}
-            {widths.map((width, i) => (
-              <div key={i} className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-4 bg-gray-800/50 rounded" />
-                <div className="h-4 bg-gray-800/50 rounded" style={{ width }} />
-              </div>
-            ))}
-          </div>
+          <EditorAreaSkeleton />
         </div>
+      </div>
+    </div>
+  );
+}
+
+// Just the editor area skeleton without header
+export function EditorAreaSkeleton() {
+  const widths = useMemo(
+    () => Array.from({ length: 15 }, () => `${20 + Math.random() * 60}%`),
+    []
+  );
+
+  return (
+    <div className="w-full h-[calc(100vh-280px)] min-h-[600px] bg-[#1a1a24] p-4 relative">
+      <div className="absolute inset-0 p-4">
+        {widths.map((width, i) => (
+          <div key={i} className="flex items-center gap-4 mb-3">
+            <div className="w-12 h-4 bg-gray-800/50 rounded" />
+            <div className="h-4 bg-gray-800/50 rounded" style={{ width }} />
+          </div>
+        ))}
       </div>
     </div>
   );
