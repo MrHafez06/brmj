@@ -97,7 +97,7 @@ export default function EditorPanelClient() {
         <div className="rounded-lg overflow-hidden border border-gray-800/30">
           {clerk.loaded ? (
             <Editor
-              height="600px"
+              height="calc(100vh - 280px)"
               language={LANGUAGE_CONFIG[language].monacoLanguage}
               onChange={handleEditorChange}
               theme={theme}

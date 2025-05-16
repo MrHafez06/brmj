@@ -36,7 +36,7 @@ export function EditorPanelSkeleton() {
 
         {/* Editor Area Skeleton */}
         <div className="rounded-lg overflow-hidden border border-gray-800/30">
-          <div className="h-[600px] bg-[#1a1a24] p-4">
+          <div className="h-[calc(100vh-280px)] min-h-[600px] bg-[#1a1a24] p-4">
             {/* Code line skeletons */}
             {widths.map((width, i) => (
               <div key={i} className="flex items-center gap-4 mb-3">
@@ -53,7 +53,7 @@ export function EditorPanelSkeleton() {
 
 export function OutputPanelSkeleton() {
   return (
-    <div className="relative bg-[#121218] rounded-lg border border-gray-800/30 p-4">
+    <div className="relative bg-[#121218] rounded-lg border border-gray-800/30 p-4 h-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export function OutputPanelSkeleton() {
 
       {/* Output Area Skeleton */}
       <div className="relative">
-        <div className="bg-[#1a1a24] border border-gray-800/30 rounded-lg p-4 h-[600px]">
+        <div className="bg-[#1a1a24] border border-gray-800/30 rounded-lg p-4 h-[calc(100vh-280px)] min-h-[600px]">
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
               <div className="w-12 h-12 mx-auto mb-4 bg-gray-800/50 rounded" />

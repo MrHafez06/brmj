@@ -26,7 +26,7 @@ function OutputPanel() {
   };
 
   return (
-    <div className="relative bg-[#121218] rounded-lg border border-gray-800/30 p-4">
+    <div className="relative bg-[#121218] rounded-lg border border-gray-800/30 p-4 h-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
@@ -62,7 +62,7 @@ function OutputPanel() {
 
       {/* Output Area */}
       <div className="rounded-lg overflow-hidden border border-gray-800/30">
-        <div className="bg-[#1a1a24] p-4 h-[600px] overflow-auto font-mono text-sm">
+        <div className="bg-[#1a1a24] p-4 h-[calc(100vh-280px)] min-h-[600px] overflow-auto font-mono text-sm">
           {isRunning ? (
             <RunningCodeSkeleton />
           ) : error ? (
